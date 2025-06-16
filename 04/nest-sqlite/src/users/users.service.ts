@@ -29,16 +29,15 @@ export class UsersService {
   }
 
   async create(body: any) {
+    const photo = new Photo();
+    photo.url = `http://images.com/${Date.now()}.jpeg`;
+    await this.photosRepository.save(photo);
+
     const user = new User();
     user.name = body.name;
     user.email = body.email;
-    user.photos = [];
+    user.photos = [photo];
     await this.usersRepository.save(user);
-
-    const photo = new Photo();
-    photo.url = `http://images.com/${Date.now()}.jpeg`;
-    photo.owner = user;
-    await this.photosRepository.save(photo);
 
     return user;
   }
