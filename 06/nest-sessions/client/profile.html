@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Демо Авторизации - Профиль</title>
+    <link rel="stylesheet" href="styles/profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="profile-container">
+      <header class="profile-header">
+        <h1>Профиль пользователя</h1>
+        <div class="user-actions">
+          <a href="#" id="admin-link" class="admin-link"
+            >Панель администратора</a
+          >
+          <button id="logout-btn">Выйти</button>
+        </div>
+      </header>
+
+      <div class="profile-content">
+        <div class="profile-card">
+          <div class="profile-info">
+            <div class="profile-avatar">
+              <span id="avatar-initials">..</span>
+            </div>
+            <div class="profile-details">
+              <h2 id="username-display">Имя пользователя</h2>
+              <p id="role-display">Роль: Пользователь</p>
+              <p id="user-id">ID: -</p>
+            </div>
+          </div>
+
+          <div class="sessions-info">
+            <h3>Активные сессии</h3>
+            <p class="session-explanation">
+              Ниже отображены все ваши текущие активные сессии на разных
+              устройствах. Вы можете завершить любую сессию, кроме текущей.
+            </p>
+
+            <div class="sessions-list" id="sessions-container">
+              <div class="loading-sessions">
+                <div class="spinner"></div>
+                <p>Загрузка сессий...</p>
+              </div>
+            </div>
+
+            <div class="current-session-notice">
+              <p>
+                <i class="fas fa-info-circle"></i>
+                <strong>Текущая сессия</strong> отмечена зеленым цветом. Она
+                будет активна, пока вы не выйдете из системы или пока сессия не
+                истечет по времени.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="api-test">
+          <h3>Тест защищенных ресурсов</h3>
+          <button id="profile-btn" class="test-btn">
+            Получить информацию профиля
+          </button>
+          <button id="secret-btn" class="test-btn">
+            Доступ к секрету (только для администраторов)
+          </button>
+          <div id="api-result" class="result-box">
+            Результаты появятся здесь
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/profile.js"></script>
+  </body>
+</html>

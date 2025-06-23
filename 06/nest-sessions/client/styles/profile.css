@@ -1,0 +1,307 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.profile-container {
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-header {
+  background: #2c3e50;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header h1 {
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+.user-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.admin-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.admin-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#logout-btn {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#logout-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-card,
+.api-test {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+  background: #0084ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.profile-details h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.profile-details p {
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.sessions-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #2c3e50;
+}
+
+.session-explanation {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.sessions-list {
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.loading-sessions {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+}
+
+.spinner {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #0084ff;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.session-card {
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.session-card:last-child {
+  border-bottom: none;
+}
+
+.session-card.current-session {
+  background-color: #e3fcef;
+  border-left: 4px solid #10b981;
+}
+
+.session-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.device-icon {
+  font-size: 1.5rem;
+  color: #0084ff;
+  width: 40px;
+  text-align: center;
+}
+
+.session-details {
+  flex: 1;
+}
+
+.device-name {
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 0.25rem;
+}
+
+.session-meta {
+  font-size: 0.85rem;
+  color: #666;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.terminate-btn {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  color: #dc3545;
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.terminate-btn:hover {
+  background-color: #fdecea;
+  border-color: #dc3545;
+}
+
+.terminate-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.current-session-notice {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 1rem;
+}
+
+.current-session-notice i {
+  color: #0084ff;
+}
+
+.api-test h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.test-btn {
+  padding: 0.75rem 1rem;
+  background: #0084ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-right: 0.75rem;
+  margin-bottom: 1rem;
+  transition: background 0.2s;
+}
+
+.test-btn:hover {
+  background: #0073e6;
+}
+
+.result-box {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 1rem;
+  font-family: monospace;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  min-height: 100px;
+}
+
+@media (max-width: 600px) {
+  .profile-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .user-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .session-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .session-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .terminate-btn {
+    align-self: flex-end;
+  }
+}
