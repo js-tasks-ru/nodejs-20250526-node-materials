@@ -1,0 +1,19 @@
+types of testing
+
+- unit
+    functions, class
+- functional
+    module, classes, simple external methods
+- e2e/integration
+    module, external system, databases, services
+
+
+TDD/BDD
+
+test runner
+assertions
+
+import assert from 'node:assert';
+function checkAge(age) {
+    assert.ok(age >= 18);
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вход</title>
+    <link rel="stylesheet" href="styles/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-box">
+        <h1>Добро пожаловать!</h1>
+        <p class="subtitle">Пожалуйста, войдите, чтобы продолжить</p>
+
+        <!-- Alert messages will be inserted here dynamically -->
+
+        <form id="login-form" class="login-form">
+          <div class="form-group">
+            <label for="username">Имя пользователя</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              required
+              placeholder="Введите имя пользователя"
+            />
+            <!-- Error messages will be inserted here dynamically -->
+          </div>
+
+          <div class="form-group">
+            <label for="password">Пароль</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              placeholder="Введите пароль"
+            />
+            <!-- Error messages will be inserted here dynamically -->
+          </div>
+
+          <button type="submit" class="login-btn">Войти</button>
+        </form>
+
+        <div class="divider">
+          <span>или</span>
+        </div>
+
+        <button class="github-btn">
+          <i class="fab fa-github"></i>
+          Продолжить с GitHub
+        </button>
+      </div>
+    </div>
+
+    <script src="scripts/login.js"></script>
+  </body>
+</html>

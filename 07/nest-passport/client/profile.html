@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Демо Авторизации - Профиль</title>
+    <link rel="stylesheet" href="styles/profile.css" />
+  </head>
+  <body>
+    <div class="profile-container">
+      <header class="profile-header">
+        <h1>Профиль пользователя</h1>
+        <div class="user-actions">
+          <a href="#" id="admin-link" class="admin-link"
+            >Панель администратора</a
+          >
+          <button id="logout-btn">Выйти</button>
+        </div>
+      </header>
+
+      <div class="profile-content">
+        <div class="profile-card">
+          <div class="profile-info">
+            <div class="profile-avatar">
+              <span id="avatar-initials">..</span>
+            </div>
+            <div class="profile-details">
+              <h2 id="username-display">Имя пользователя</h2>
+              <p id="role-display">Роль: Пользователь</p>
+              <p id="user-id">ID: -</p>
+            </div>
+          </div>
+
+          <div class="token-info">
+            <h3>JWT токен</h3>
+            <div class="token-display">
+              <pre id="token-content">Загрузка токена...</pre>
+            </div>
+            <p class="token-explanation">
+              Этот токен содержит информацию о вашем пользователе и отправляется
+              с каждым запросом для аутентификации. Он имеет короткий срок жизни
+              для безопасности.
+            </p>
+
+            <h3>Информация о токенах</h3>
+            <div class="token-status">
+              <div class="token-expiry">
+                <p>
+                  <strong>Токен истекает:</strong>
+                  <span id="access-token-expiry">Загрузка...</span>
+                </p>
+                <p>
+                  <strong>RefreshToken истекает:</strong>
+                  <span id="refresh-token-expiry">Загрузка...</span>
+                </p>
+              </div>
+              <p class="token-explanation">
+                RefreshToken используется для получения нового токена доступа,
+                когда текущий истекает. Он имеет более длительный срок действия,
+                но никогда не передается в обычных API-запросах.
+              </p>
+              <div class="auto-refresh-notice">
+                <p>
+                  ✨ <strong>Автоматическое обновление включено:</strong> Ваш
+                  токен доступа будет обновляться автоматически при истечении
+                  срока действия или когда API-запрос вернет ошибку авторизации.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="api-test">
+          <h3>Тест защищенных ресурсов</h3>
+          <button id="profile-btn" class="test-btn">
+            Получить информацию профиля
+          </button>
+          <button id="secret-btn" class="test-btn">
+            Доступ к секрету (только для администраторов)
+          </button>
+          <div id="api-result" class="result-box">
+            Результаты появятся здесь
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/profile.js"></script>
+  </body>
+</html>
