@@ -1,0 +1,52 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateTaskInput {
+  """Подробное описание"""
+  description: String
+
+  """Короткий заголовок задачи"""
+  title: String!
+}
+
+type Mutation {
+  """Создаёт новую задачу и возвращает её"""
+  createTask(data: CreateTaskInput!): Task!
+
+  """Удаляет задачу и отдаёт её данные"""
+  removeTask(id: Int!): Task!
+
+  """Обновляет задачу по её ID"""
+  updateTask(data: UpdateTaskInput!): Task!
+}
+
+type Query {
+  """Задача по её ID"""
+  task(id: Int!): Task!
+
+  """Список всех задач"""
+  tasks: [Task!]!
+}
+
+type Task {
+  """Подробное описание"""
+  description: String
+
+  """Уникальный идентификатор задачи"""
+  id: ID!
+
+  """Короткий заголовок задачи"""
+  title: String!
+}
+
+input UpdateTaskInput {
+  """Подробное описание"""
+  description: String
+
+  """ID редактируемой задачи"""
+  id: Int!
+
+  """Короткий заголовок задачи"""
+  title: String
+}
